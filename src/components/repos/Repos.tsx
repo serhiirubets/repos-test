@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { State } from '../types';
 import { Action } from 'redux';
 import { ReposDTO, ReposEntity } from './dto';
-import { Table, PageHeader } from 'antd';
+import { Table, PageHeader, Spin } from 'antd';
 
 type MyThunkDispatch = ThunkDispatch<State, undefined, Action>;
 
@@ -51,7 +51,7 @@ const Repos = ({ getRepos, repos, totalCount }: ReposProps) => {
     );
   }
 
-  return <h2>Loading</h2>;
+  return <div style={{ textAlign: 'center', paddingTop: '30px'}}><Spin size="large" /></div>;
 };
 
 const mapStateToProps = (state: State) => ({

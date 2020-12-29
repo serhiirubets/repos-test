@@ -1,7 +1,7 @@
 export const CONFIG = {
   GITHUB: {
     API_KEY: 'https://api.github.com/graphql',
-    TOKEN: '305fa662a07174222d150db81cc345377add5876',
+    TOKEN: '9150dd0d28c22d3494a50b17cf1eb47b572157af',
   },
   FILTERS: {
     FIRST: 20,
