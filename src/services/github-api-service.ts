@@ -1,4 +1,5 @@
 import { CONFIG } from '../config';
+import {SearchReposResponse} from "../components/repos/dto";
 
 const prepareQuery = (query: string, stars: number, first: number): string => `
   query {
@@ -21,14 +22,18 @@ const prepareQuery = (query: string, stars: number, first: number): string => `
   }
 `;
 
-class GithubApiService {
+interface GitService {
+  getAll(query: string, stars: number, first: number): Promise<SearchReposResponse>;
+}
+
+class GithubApiService implements GitService {
   constructor(private url: string) {}
   getAll(query: string, stars: number, first: number) {
     const opts = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer 305fa662a07174222d150db81cc345377add5876'
+        Authorization: `Bearer ${CONFIG.GITHUB.TOKEN}`
       },
       body: JSON.stringify({ query: prepareQuery(query, stars, first) })
     };
