@@ -1,5 +1,5 @@
 import { CONFIG } from '../config';
-import {SearchReposResponse} from "../components/repos/dto";
+import { SearchReposResponse } from '../components/repos/dto';
 
 const prepareQuery = (query: string, stars: number, first: number): string => `
   query {
@@ -23,7 +23,11 @@ const prepareQuery = (query: string, stars: number, first: number): string => `
 `;
 
 interface GitService {
-  getAll(query: string, stars: number, first: number): Promise<SearchReposResponse>;
+  getAll(
+    query: string,
+    stars: number,
+    first: number
+  ): Promise<SearchReposResponse>;
 }
 
 class GithubApiService implements GitService {

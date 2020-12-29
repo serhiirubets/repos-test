@@ -51,7 +51,11 @@ const Repos = ({ getRepos, repos, totalCount }: ReposProps) => {
     );
   }
 
-  return <div style={{ textAlign: 'center', paddingTop: '30px'}}><Spin size="large" /></div>;
+  return (
+    <div style={{ textAlign: 'center', paddingTop: '30px' }}>
+      <Spin size="large" />
+    </div>
+  );
 };
 
 const mapStateToProps = (state: State) => ({

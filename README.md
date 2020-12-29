@@ -8,3 +8,4 @@
 ## Steps for start the project
 * Install dependencies `npm i` or `yarn`
 * Start the project `npm start` or `yarn start` 
+* For run prettier auto fix use `npm run prettierfix` or `yarn prettierfix`
