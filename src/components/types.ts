@@ -1,5 +1,5 @@
-import {ReposDTO} from "./repos/dto";
+import { ReposDTO } from './repos/dto';
 
 export interface State {
-  repos?: ReposDTO
+  repos?: ReposDTO;
 }

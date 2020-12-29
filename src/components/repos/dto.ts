@@ -20,15 +20,15 @@ interface Repo {
 
 export type ReposEntity = Array<Repo>;
 
-type Edges = ReadonlyArray<{ node: RepoDTO }>
+type Edges = ReadonlyArray<{ node: RepoDTO }>;
 
 export interface SearchReposResponse {
   data: {
     search: {
-      edges: Edges
-      repositoryCount: number
-    }
-  }
+      edges: Edges;
+      repositoryCount: number;
+    };
+  };
 }
 
 export interface ReposDTO {
@@ -42,7 +42,7 @@ export const prepareRepos = (data: SearchReposResponse): ReposDTO => {
     repos: data.data.search.edges.map(({ node }) => ({
       name: node.name,
       starAmount: node.stargazers.totalCount,
-      forksAmount: node.forks.totalCount,
-    })),
-  }
-}
+      forksAmount: node.forks.totalCount
+    }))
+  };
+};
